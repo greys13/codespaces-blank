@@ -1,0 +1,152 @@
+public class TicTacToe {
+    public void findWinner(char game[][]) {
+        int c = 0, draw = 1;
+        for (int i = 0; i < 3; i++) {
+            c = 0;
+            for (int j = 0; j < 3; j++) {
+                if (game[i][j] == game[i][0]) {
+                    c += 1;
+                }
+            }
+            if (c == 3) {
+                draw = 0;
+                System.out.println(game[i][0] + " wins horizontally!\n");
+                return;
+            }
+        }
+        for (int j = 0; j < 3; j++) {
+            c = 0;
+            for (int i = 0; i < 3; i++) {
+                if (game[i][j] == game[0][j]) {
+                    c += 1;
+                }
+            }
+            if (c == 3) {
+                draw = 0;
+                System.out.println(game[0][j] + " wins vertically!\n");
+                return;
+            }
+        }
+        c = 1;
+        for (int i = 1; i < 3; i++) {
+            if (game[i][i] == game[0][0]) {
+                c += 1;
+            }
+        }
+        if (c == 3) {
+            draw = 0;
+            System.out.println(game[0][0] + " wins diagonally!\n");
+            return;
+        }
+        c = 1;
+        for (int i = 1; i < 3; i++) {
+            if (game[i][2 - i] == game[0][2]) {
+                c += 1;
+            }
+        }
+        if (c == 3) {
+            draw = 0;
+            System.out.println(game[0][2] + " wins diagonally!\n");
+            return;
+        }
+        if (draw == 1) {
+            System.out.println("cat's game - no winner!\n");
+        }
+    }
+    public void res(String st) {
+        char game[][] = new char[3][3];
+        char row[] = st.toCharArray();
+        int i = 0, j = 0;
+        for (char x: row) {
+            game[i][j] = x;
+            j += 1;
+            if ((j % 3) == 0) {
+                j = 0;
+                i += 1;
+            }
+        }
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) System.out.print(game[i][j] + " ");
+            if (i != 2) System.out.println();
+        }
+        System.out.println();
+        this.findWinner(game);
+    }
+}
+
+
+public class TicTacToe {
+    public void findWinner(char game[][]) {
+        int c = 0, draw = 1;
+        for (int i = 0; i < 3; i++) {
+            c = 0;
+            for (int j = 0; j < 3; j++) {
+                if (game[i][j] == game[i][0]) {
+                    c += 1;
+                }
+            }
+            if (c == 3) {
+                draw = 0;
+                System.out.println(game[i][0] + " wins horizontally!\n");
+                return;
+            }
+        }
+        for (int j = 0; j < 3; j++) {
+            c = 0;
+            for (int i = 0; i < 3; i++) {
+                if (game[i][j] == game[0][j]) {
+                    c += 1;
+                }
+            }
+            if (c == 3) {
+                draw = 0;
+                System.out.println(game[0][j] + " wins vertically!\n");
+                return;
+            }
+        }
+        c = 1;
+        for (int i = 1; i < 3; i++) {
+            if (game[i][i] == game[0][0]) {
+                c += 1;
+            }
+        }
+        if (c == 3) {
+            draw = 0;
+            System.out.println(game[0][0] + " wins diagonally!\n");
+            return;
+        }
+        c = 1;
+        for (int i = 1; i < 3; i++) {
+            if (game[i][2 - i] == game[0][2]) {
+                c += 1;
+            }
+        }
+        if (c == 3) {
+            draw = 0;
+            System.out.println(game[0][2] + " wins diagonally!\n");
+            return;
+        }
+        if (draw == 1) {
+            System.out.println("cat's game - no winner!\n");
+        }
+    }
+    public void res(String st) {
+        char game[][] = new char[3][3];
+        char row[] = st.toCharArray();
+        int i = 0, j = 0;
+        for (char x: row) {
+            game[i][j] = x;
+            j += 1;
+            if ((j % 3) == 0) {
+                j = 0;
+                i += 1;
+            }
+        }
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) System.out.print(game[i][j] + " ");
+            if (i != 2) System.out.println();
+        }
+        System.out.println();
+        this.findWinner(game);
+    }
+}
